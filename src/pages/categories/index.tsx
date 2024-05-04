@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Box, Typography, useTheme, Grid } from "@mui/material";
 
-import { getAllCategoriesRequest } from "../../store/products/actions";
-import {} from "@mui/material";
-import { useSelector } from "react-redux";
+import {
+  getAllCategoriesRequest,
+  getCategoryProductsRequest,
+} from "../../store/products/actions";
+import ProductCard from "../../components/productCard";
+import { product } from "../../store/products/reducers";
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -13,7 +16,7 @@ const Categories = () => {
   const categories = useSelector(
     (state: any) => state.productsReducer.allCategories
   );
-
+  const products = useSelector((state: any) => state.productsReducer.products);
   useEffect(() => {
     dispatch(getAllCategoriesRequest());
   }, []);
@@ -23,6 +26,13 @@ const Categories = () => {
       setSelectedCategory(categories[0]);
     }
   }, [categories]);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      dispatch(getCategoryProductsRequest({ category: selectedCategory }));
+    }
+  }, [selectedCategory]);
+
   return (
     <Box sx={{ padding: "3rem" }}>
       <Grid container sx={{ margin: "1rem 0" }}>
@@ -78,6 +88,13 @@ const Categories = () => {
             >
               {categogry}
             </Typography>
+          </Grid>
+        ))}
+      </Grid>
+      <Grid container spacing={2} sx={{ padding: "0 4rem" }}>
+        {products?.map((product: product, index: number) => (
+          <Grid item xs={4} key={index}>
+            <ProductCard product={product} />
           </Grid>
         ))}
       </Grid>

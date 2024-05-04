@@ -18,21 +18,6 @@ const typography: TypographyOptions = {
     fontSize: "2rem",
     fontWeight: 600,
   },
-  bodyText1: {
-    fontSize: "1.75rem",
-  },
-  bodyText2: {
-    fontSize: "1.375rem",
-  },
-  bodyText3: {
-    fontSize: ".7rem",
-  },
-  bodyText4: {
-    fontSize: ".8rem",
-  },
-  bodyText5: {
-    fontSize: ".65rem",
-  },
 };
 
 export default typography;

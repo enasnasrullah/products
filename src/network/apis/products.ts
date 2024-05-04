@@ -5,4 +5,12 @@ const getAllCategories = async (): Promise<AxiosResponse<any>> => {
   return await get("/products/categories");
 };
 
-export { getAllCategories };
+const getCategoryProducts = async ({
+  category,
+}: {
+  category: string;
+}): Promise<AxiosResponse<any>> => {
+  return await get(`/products/category/${category}`);
+};
+
+export { getAllCategories, getCategoryProducts };

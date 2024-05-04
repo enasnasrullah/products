@@ -20,18 +20,6 @@ declare module "@mui/material" {
   }
 }
 
-declare module "@mui/material/Typography" {
-  interface TypographyPropsVariantOverrides {
-    title?: true;
-    h1?: true;
-    bodyText1?: true;
-    bodyText2?: true;
-    bodyText3?: true;
-    bodyText4?: true;
-    bodyText5?: true;
-  }
-}
-
 declare module "@mui/material/styles/createTypography" {
   interface FontStyleOptions {
     fontWeightThin?: number;
@@ -41,12 +29,5 @@ declare module "@mui/material/styles/createTypography" {
     fontWeightExtraBold?: number;
     fontWeightHeavy?: number;
     fontFamilyBold?: string;
-    title?: CSSProperties;
-    h1?: CSSProperties;
-    bodyText1?: CSSProperties;
-    bodyText2?: CSSProperties;
-    bodyText3?: CSSProperties;
-    bodyText4?: CSSProperties;
-    bodyText5?: CSSProperties;
   }
 }
