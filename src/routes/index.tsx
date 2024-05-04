@@ -7,6 +7,5 @@ export interface IRoute {
 }
 
 export const routes: IRoute[] = [
-  { path: pathnames.PRODUCTS, element: <LazyComponent.Products /> },
   { path: pathnames.CATEGORIES, element: <LazyComponent.Categories /> },
 ];

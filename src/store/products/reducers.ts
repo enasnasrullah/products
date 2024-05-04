@@ -1,10 +1,22 @@
 import * as types from "./types";
 
-const INITIAL_STATE = {
+interface Action {
+  type: string;
+  payload: any;
+}
+
+interface State {
+  allCategories: any;
+}
+
+const INITIAL_STATE: State = {
   allCategories: null,
 };
 
-const productsReducer = (state = INITIAL_STATE, action) => {
+const productsReducer = (
+  state: State = INITIAL_STATE,
+  action: Action
+): State => {
   switch (action.type) {
     case types.GET_ALL_CATEGORIES_RESPONSE:
       return { ...state, allCategories: action.payload };

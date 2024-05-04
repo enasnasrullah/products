@@ -49,6 +49,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.33"
+    "@types/react-redux": "^7.1.33",
+    "@types/redux-saga": "^0.10.5",
+    "install": "^0.13.0"
   }
 }
